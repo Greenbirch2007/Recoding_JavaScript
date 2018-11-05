@@ -1,0 +1,419 @@
+第６章　案例研究：图片库改进版
+
+把事件处理函数移出文档
+向后兼容
+确保可访问
+网页设计人员总在思考：是否还有更好的解决办法
+与dom脚本变成工作有关的问题不外乎平稳退化，向后兼容和分离js这几大类。这些问题的解决方式和
+解决程度影响着网页的可用性和可访问性
+
+６．１　　快速回顾
+
+在第４章里，编写了一个用来替换“占位符”图片的src属性的脚本，只用一个网页就建立图片库。代码如下：
+function showPic(whichpic) {
+    var source = whichpic.getAttribute("href");
+    var placeholder = document.getElementById("placeholder");
+    placeholder.setAttribute("src",source);
+    var text = whichpic.getAttribute("title");
+    var description = document.getElementById('description');
+    description.firstChild.nodeValue = text;
+
+}
+
+下面是用来调用此函数的html片段
+现在，为改进这个解决方案，我们要提出几个问题
+
+６．２　它支持平稳退化吗？
+６．３　它的javascript与html标记是分离的吗？
+６．４　不要做太多的假设
+６．５　优化
+６．６　键盘访问
+６．７　把javascript与css结合起来
+６．８　DOM Core 和　HTML-DOM
+
+
+6.2　它会支持平稳退化吗？
+第一个问题：“如果javascript功能被禁用，会怎样？”
+上面代码已经预留了退路：即使javascript功能已经被禁用，用户也可以浏览图片库里的所有图片，
+网页里的所有链接也都可以正常工作
+    <li>
+        <a href="http://localhost:63342/Recoding_JavaScript/TESTS/images/8" onclick="showPic(this);return false"; title="a fireworks display">Firework</a>
+
+    </li>
+
+在没有javascript“干扰”的情况下，浏览器将沿着href属性给出的链接前进，用户将看到一张新图片而不是
+“该页无法显示”之类的出错信息。虽说用户体验比用javascript的效果要略差一些，但网页的基本功能未受到损害---页面上的所有内容都可以访问
+如果我当初选用的是“javascript” 伪协议，链接将如下：
+
+    <li>
+        <a href="javascript:showPic('images/8'); return false;"  title="a fireworks display">Firework</a>
+
+    </li>
+
+如果我把这些链接都写成上面这样，它们在不支持或禁用了javascript功能的浏览器里将毫无用处
+
+类似的，把这些链接写成“＃”记号也会导致类似的问题，但遗憾的是，这个技巧在那些利用剪切粘贴操作“编写”的javascript代码里相当常见。
+类似于使用“javascript:”伪协议时的情况，如果当初使用的是“＃”记号，那些没有启用javascript功能的用户也将无法正常浏览我的图片库
+    <li>
+        <a href="＃" onclick="showPic('images/8')" return false;  title="a fireworks display">Firework</a>
+
+    </li>
+
+把href属性设置为一个真实存在的值是举手之劳，但图片库却因此能够平稳退化，虽说没有启动javascript功能的用户需要在浏览器里点击
+“后退”按钮才能重新看到我的图片清单，但这总比根本看到要好
+图片库通过了第一个测试
+
+６．３　它的javascript与html标记是分离的吗？
+下一个问题与标记文档里调用javascript代码的方式有关：文档的结构与文档的行为分开了吗？网页的行为层(javascript)是作用域其结构层(html)
+之上的，还是两种代码混杂在一起？
+具体到图片库这个例子，答案是“它们混杂在一起了”
+当初我是把onclick事件处理函数直接插入到标记文档里的，如
+    <li>
+        <a href="http://localhost:63342/Recoding_JavaScript/TESTS/images/8" onclick="showPic(this);return false"; title="a fireworks display">Firework</a>
+
+    </li>
+
+理想情况下，应该在外部文件里完成添加onclick事件处理函数的工作，那样才能让标记文档没有"杂质",如下：
+    <li>
+        <a href="http://localhost:63342/Recoding_JavaScript/TESTS/images/8" title="a fireworks display">Firework</a>
+
+    </li>
+
+把javascript代码移出html稳定不是男士，但是为了让浏览器知道页面里都有哪些链接有着不一样的行为，我必须找到一种“挂钩”把javascript代码与
+html文档中的有关标记关联起来
+有多种办法可以让我达到这一目的
+可以向下面这样给出图片清单里的每个链接分别添加一个如下所示的class属性：
+    <li>
+        <a href="http://localhost:63342/Recoding_JavaScript/TESTS/images/8" class="gallerypic" title="a fireworks display">Firework</a>
+
+    </li>
+
+但这种技术不够理想，这与给它们分别添加事件处理函数同样麻烦
+图片清单里的各种链接有一个共同点：它们都包含在同一个列表清单元素里。给整个清单设置一个独一无二的id的办法要简单的多：
+<ul id="imagegallery">
+  <li>
+        <a href="http://localhost:63342/Recoding_JavaScript/TESTS/images/8"  title="a fireworks display">Firework</a>
+
+    </li>
+    <li>
+        <a href="http://localhost:63342/Recoding_JavaScript/TESTS/images/2" title="a cup of black coffee">Coffee</a>
+
+    </li>
+    <li>
+        <a href="http://localhost:63342/Recoding_JavaScript/TESTS/images/3"  title="A red,red rose ">Rose</a>
+
+    </li>
+    <li>
+        <a href="http://localhost:63342/Recoding_JavaScript/TESTS/images/4"  title="The famous clock">Big Ben</a>
+    </li>
+    <img id="placeholder" src="http://localhost:63342/Recoding_JavaScript/TESTS/images/5" alt=" my image gallery"/>
+    <p id="description">Choose an image.</p>
+
+</ul>
+
+你将看到，虽然只有这一个“挂钩”，但对javascript来说已经足够
+
+６．３．１　添加事件处理函数
+
+现在，需要编写一个简单的函数把有关操作关联到onclick事件上，我将其命名为prepareGallery.
+下面是我想让这个函数完成的工作（５个）
+１．检查当前浏览器是否理解getElementsByTagName
+2. 检查当前浏览器是否理解getElementById
+3. 检查当前网页是否存在一个id为imagegallery的元素
+4. 遍历imagegallery元素中的所有链接
+5. 设置onclick事件，让它在有关链接被点击时完成以下操作：
+（１）　把这个链接作为参数传递给showPic函数
+ (2) 取消链接被点击时的默认行为，不让浏览器打开这个链接
+
+我将从定义prepareGallery函数开始。这个函数不需要参数，所以在这个函数名字后面的圆括号用不着写出任何东西：
+function prepareGallery(){
+1. 检查点　
+我想做的第一件事是建厂当前浏览器是否理解名为getElementsByTagName的DOM方法。我将在这个函数里使用这个方法，
+需要保证不理解这个方法的浏览器不会执行这个函数：
+if (!document.getElementsByTagName) return false;
+这条if语句相当于一句话：“如果getElementsByTagName未定义，请现在离开”。理解这个DOM方法的浏览器将继续执行
+
+现在，对名为getElementsById的DOM方法进行同样的检查，因为我的函数也会用到这个方法。
+if (!document.getElementsById) return false;
+
+可以把这两项检查组合在一起：“只要你不理解这两个方法中的其中一个，请立即离开”
+
+if (!document.getElementsByTagName || !document.getElementsById) return false;
+
+或者
+
+var supported = document.getElementsByTagName && document.getElementById;
+if (!suppored) return;
+
+不过上面的代码开始变得冗长并难以阅读。最好使用花括号把return语句括起来
+
+if (!document.getElementsByTagName) {
+return false;}
+if (!document.getElementsById) {
+return false;}
+
+完成这两项具有普遍适用性的测试后，我还安排了一个更具针对性的测试。我正在编写的这个函数将处理id等于imagegallery的那个
+元素所包含的链接，假如这个元素并不存在，我的这个函数也就无需继续执行了
+与前面两项测试一样，我将使用“逻辑非”操作符来进行这一测试
+
+if (!document.getElementsById("imagegallery")) return false;
+
+出于个人偏好，也可以如下：
+if (!document.getElementsById("imagegallery")) {
+return false;}
+这项测试是一个预防性措施。现在我知道调用这个javascript函数的文档里有一个id属性值等于imagegallery的列表清单元素，但
+我不敢确定这在将来会不会发生变化。有了这个预防性措施，即使以后我决定从网页上删掉图片库，也用不着担心这个网页的javascript代码
+会突然出现。把html文档的内容与javascript代码所实现的行为分离开来的重要性可见一斑
+作为一条原则，如果想用javascript给某个网页添加一些行为，就不应该让javascript代码对这个网页的结构有任何依赖
+
+结构化程序设计备忘
+
+结构化程序设计(structed programming) 有一个原则：函数应该只有一个入口和一个出口
+
+我刚才的做法已经违背了这一原则：我在prepareGallery()函数的开头部分使用了多条return false语句，它们全都是这个函数的出口，
+根据上面的原则，应该减少到一个
+但是，如果一个函数有多个出口，只要这些出口集中出现在函数的开头部分，就是可以接受的
+出于可读性的考虑，我把那些return false语句全部集中到prepareGallery的开头部分：
+
+function prepareGallery() {
+    if (!document.getElementsByTagName) return false;
+    if (!document.getElementById) return false;
+    if (!document.getElementById("imagegallery")) return false;
+}
+
+必要的测试和检查工作就绪之后，我现在开始写事件处理函数的核心功能
+
+２．变量名里有什么
+创建一个名为gallery的变量来简化
+
+var gallery = document.getElementById("imagegallery");
+
+完全可以给变量起一个另外的名字，但是最好跟图片库接近，给变量起名字时，保留字不能用
+
+按照计划，需要遍历imagegallery元素中的所有链接，我会用到getElementsByTagName。利用刚刚创建的gallery变量，可以
+把getElementsByTagName的调用简单写成：
+gallery.getElementsByTagName("a")
+它等价于下面长长的记号：
+
+document.getElementById("imagegallery").getElementsByTagName("a")
+
+现在可以简化，我决定把上面的这个记号所代表的数组（一个节点列表）赋值给一个短变量，并将这个变量命名为links:
+
+var links = gallery.getElementsByTagName("a");
+
+下面是prepareGallery函数改写后的样子
+
+function prepareGallery() {
+    if (!document.getElementsByTagName) return false;
+    if (!document.getElementById) return false;
+    if (!document.getElementById("imagegallery")) return false
+    var gallery = document.getElementById("imagegallery");
+    var links = gallery.getElementsByTagName("a");
+}
+
+准备工作就绪，我已经安排好了必要的检查工作，还创建了几个变量
+
+３．　遍历
+
+我想遍历处理links数组里的各个元素，可以用一个for循环来完成这项工作
+
+首先，把计数器的初始值设置为零，每处理links数组里的一个元素，这个计数器就增加一个１．下面是对这个计数器进行初始化的语句
+var i = 0;
+
+把充当循环计数器的变量命名为"i"是一种传统做法。　（increment 递增）
+
+下面是这个循环的控制条件：
+i < links.length;
+
+上面这个表达式的含义是：只要变量i的值小于links数组的length属性值，这个for循环就一直循环下去。length的值总是
+等于links数组里的元素总个数。因此，如果links数组包含4个元素，只要i 小于４，我的for循环就一直循环下去
+i = i+1  和　i++ 都是循环加１
+上面语句的效果，这个for循环每执行一次，变量i的值就会增加１，一旦变量i的值不再小于links.length,循环就结束
+因此，如果links数组包含４个元素，这个循环将在i等于４时结束执行。这个循环将总共执行４次－－－因为，变量i是从零开始计数的
+
+下面是for循环的开头部分：
+
+for (var i=0,i <links.length;i++){
+
+4. 改变行为
+
+具体到这个例子，我想要完成的操作是改变links数组中的各个元素的行为。事实上，与其说links是一个数组，不如说它是一个节点列表(node list)
+它是由一个DOM节点构成的集合，这个集合里每个节点都有自己的属性和方法
+
+它的onclick方法，像下面这样为它添加一个行为：
+links[i].onclick = function{
+
+这条语句定义了一个匿名函数。这是一种在代码执行时创建函数的办法。具体到上面这条语句，它把links[i]元素的onclick事件处理函数指定为
+这个匿名函数。这个匿名函数里的所有语句将在links[i]元素所对应的链接被点击时执行
+
+links[i] 元素的值会随着变量i的递增而变化。如果假设links集合里包含4个元素，那么第一个元素将是links[0],最后一个元素是links[3]
+
+我传递给showPic函数的参数是关键字this,它代表此时此刻与onclick方法相关联的那个元素。this 在这里代表links[i],而links[i]又
+对应着links节点列表里的某个特定的节点：
+
+showPic(this);
+
+我还需要再多做一件事：即禁用有关链接的默认行为。如果showPic()函数执行成功，就不让浏览器执行某个链接被点击时的默认操作。和
+之前一样，我想取消这种默认行为，不让浏览器前进到那个链接所指向的目的地：
+
+return false;
+
+返回布尔值false相当于向浏览器传递了一条消息”按照这个链接没被点击的情况采取行动“
+最后，还需要用一个右花括号结束这个匿名函数。最终的匿名函数：
+
+links[i].onclick = function(){
+ showPic(this);
+ return false;
+}
+
+5. 完成javascript函数
+
+
+调用此函数，就会把onclick事件绑定到id等于"imagegallery"的元素的各个链接元素
+
+６．３．２　共享onload事件
+
+我必须能执行prepareGallery函数才能对onclick事件进行绑定。
+
+如果马上执行这个函数，它将无法完成其工作。如果在html文档完成加载之前执行脚本，此时dom是不完整的。具体到prepareGallery函数，
+它的第３行代码将测试"imagegallery"元素是否存在，如果dom不完整，这项测试的准确性就无从谈起，事态的发展就会偏离我的计划
+
+应该让这个函数在网页加载完毕之后立刻执行。网页加载完毕时会触发一个onload事件，这个事件与window对象相关联。为了让事态的发展
+不偏离计划，必须把prepareGallery函数绑定到这个事件上：
+window.onload = prepareGallery;
+
+它解决了我的问题，但是不够完美
+
+假设我有两个函数：firstFunction ,secondFuncion.如果想让它们俩都在页面加载时得到执行，如何处理？
+如果把它们逐一绑定到onload事件上，它们当中将只有最后那个才会被执行：
+
+window.onload = firstFunciton;
+window.onload = secondFuncion;
+
+secondFunction 将取代firstFunction. 每个事件处理函数只能绑定一个指令
+
+可以先创建一个匿名函数来容纳这两个函数，然后把这个匿名函数绑定到onload事件上，如下所示：
+
+window.onload = function() {
+ firstFunction();
+ secondFunction();
+
+}
+
+它确实能很好的工作————在需要绑定的函数不是很多的情况下
+这里还有更好的方案————不管在页面加载完毕时执行多少个函数，都可以处理。这个方案需要是一个函数，addLoadEvent,它只有一个参数：
+打算在页面加载完毕时执行的函数的名字
+下面是addLoadEvent函数将要完成的操作
+
+１．把现有的window.onload事件处理函数的值存入变量oldonload
+2.　如果在这个处理函数上还没有绑定任何函数，就像平时那样把新函数添加给它
+３．　如果在这个函数上已经绑定了一些函数，就把新函数追加到现有指令的末尾
+下面是　addLoadEvent函数的代码清单
+
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function'){
+        window.onload = func;
+        }else{
+        window.onload = function(){
+            oldonload();
+            func();
+        }
+    }
+}
+
+这将把那些在页面加载完毕时执行的函数创建为一个队列。如果想把刚才那两个函数添加到这个队列中去，如下
+
+addLoadEvent(firstFunction);
+addLoadEvent(secondFunction);
+
+把addLoadEvent函数收录到我的脚本里，如下
+addLoadEvent(prepareGallery);
+
+
+6.4 不要做太多的假设
+
+在showPic函数发现一个问题:我没有让它进行任何测试和检查
+
+需要增加一些语句来检查这些元素是否存在
+
+showPic函数负责完成两件事：
+１．　找出id属性值是placeholder的图片并修改其src属性
+２．　找出id属性是descripiton的元素并修改其第一个子元素(firstChild)的nodeValue属性。
+
+只要placeholder图片存在，即使description元素不存在，切换显示新图片的操作也将照常进行
+
+正如你在prepareGallery函数里看到的那样，检查某个特定的元素是否存在是一个简单的事情
+
+if (!document.getElementById('placeholder'))  return false;
+
+紧随其后的是用来修改placeholder图片的src属性的代码，它们的效果是切换显示一张新图片
+
+var source = whichpic.getAttribute('href');
+var placeholder = document.getElementById('placeholder');
+place.holder.setAttribute('src',source);
+
+下面，采用一种稍有不同的方法检查description元素是否存在：
+if (document.getElementById('description'))
+
+只有通过了这项检查，负责修改图片说明文字的ｄｉａｍ才会得到执行
+
+var text = whichpic.getAttribute('title');
+var description = document.getElementById('description');
+description.firstChild.nodeValue = text;
+
+将描述部分放在if语句里，description元素将是可选的。如果它存在，它将被更更新。否则会忽略
+
+return true;
+
+改进后的showPic函数
+function showPic(whichpic) {
+    if (!document.getElementById('placeholder')) return false;
+    var source = whichpic.getElementById('href');
+    var placeholer = document.getElementById('placeholder');
+    placeholer.setAttribute('src',source);
+    if (document.getElementById('description')){
+        var text = whichpic.getElementById('title');
+        var description = document.getElementById('description');
+        description.firstChild.nodeValue = text;
+    }
+    return true;
+}
+
+改进后的showPic()函数不再假设有关标记文档里肯定存在这placeholder图片和description元素。即使文档里没有placeholder图片，也不会发生任何javascript错误
+
+问题在于prepareGallery函数有一个假设：showPic函数肯定会返回。基于这一假设，prepareGallery函数取消了onclick事件的默认行为：
+link[i].onclick = function(){
+showPic(this);
+return false;
+}
+
+是否要返回一个false值以取消onclick事件的默认行为，其实应该由showPic函数决定
+
+showPic应该返回两个可能的值
+１．如果图片切换成功，返回true
+2. 如果图片切换不成功，返回false
+
+应该在返回前验证showPic的返回值，以便决定是否阻止默认行为，如果showPic返回true，那么更新placeholder。在onclick事件处理函数中，
+我们可以利用"!"对showPic的返回值进行取反
+
+如果placeholder图片不存在，浏览器将按用户所点击的那个链接打开一张新突破。现在可以把placeholder图片重新放回标记里去了
+
+
+６．５　　优化
+
+三元操作符
+
+6.6  键盘访问　　
+小心　onkeypress
+
+最好不要使用onkeypress事件处理函数。onclick事件处理函数已经满足需要。
+
+6.7  把javascript 与css结合起来
+6.8 DOM Core 和　HTML-DOM
+
+至此只用了４个DOM方法　　
+getElementById,getElementsByTagName,getAttribute,setAttribute
+
+属性和方法可以互换
+

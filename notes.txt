@@ -1,0 +1,18 @@
+
+
+
+批量创建py文件(linux命令)
+
+touch file.{1..5}.html
+
+
+
+
+批量创建文件夹
+
+
+themes = ["1.Javacript概述","2.语法结构","3.类型、值和变量","4.表达式和运算符","5.语句","6.对象","7.数组","8.函数","9.类和模块","10.正则表达式的模式匹配","11.JavaScript的子集和扩展","12.服务器端Javascript","13.Web浏览器中的JavaScript","14.Windom对象"，"15.脚本化文档","16.脚本化CSS","17.事件处理","18.脚本化HTTP","19.jQuery类库","20.客户端存储","21.多媒体和图形编程","22.HTML5 API"]
+base = "/home/karson/Recoding_JavaScript/JavaScript高级程序设计/"
+for i in themes:
+    file_name = base + str(i)
+    os.mkdir(file_name)

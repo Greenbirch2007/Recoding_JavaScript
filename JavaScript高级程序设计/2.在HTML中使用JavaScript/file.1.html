@@ -1,0 +1,139 @@
+第2 章  在HTMLZ中使用JavaScript
+
+本章内容
+使用<script>元素  嵌入脚本与外部脚本  文档模式对javascript的影响  考虑禁用javascript的场景
+
+<script>元素有6个属性
+1.async 表示通过src属性指定的代码的字符集
+2.charset ,表示通过src属性指定的代码的字符集。
+3.defer,表示脚本可以延迟到文档完全被解析和显示之后再执行
+4. language
+5. src 表示包含要执行代码的外部文件
+6. type 可以看成是language的替代属性；表示编写代码使用的脚本语言的呢日用类型（也称为MIME类型）
+
+使用<script>元素方式有两种：
+1. 直接在页面中嵌入javascript代码
+2.包含在外部js文件中
+
+在使用<script>元素嵌入js代码时，只需要为<script>元素指定type属性， 如下
+
+<script type="text/javascript">
+    function sayHi() {
+        alert('hi!~~~');
+    }
+    sayHi();
+
+ 包含在<script>元素内部的javascript代码将被从上至下一次解释。 不能出现</script>
+如果要通过<script>元素来包含外部js文件，那么src属性就是必须的。这个属性的值指向一个外部js文件的连接
+    如
+ <script type="text/javascript" src="example.js"></script>
+
+浏览器不会检查包含Js的文件的扩展名。这样一来，使用JSP,PHPhuo 或其他服务器语言动态生成js代码就称为可能
+服务器通常还是需要看扩展名来决定为响应应用那种MIME类型。如果不使用js扩展名，请确保服务器能返回
+正确的MIME类型
+
+2.2.1 标签的位置
+按照管理，所有<script>元素都应该放在页面的<head>元素中
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Example HTML Page</title>
+     <script type="text/javascript" src="example1.js"></script>
+     <script type="text/javascript" src="example2.js"></script>
+ </head>
+<body>
+  <!------这里放内容---->
+</body>
+</html>
+
+在文档的<head>元素中包含所有的js文件，意味着必须等到全部js代码都被下载解析和执行完成之后，才能
+    开始呈现页面的内容（浏览器在遇到<body>标签时才开始呈现内容）
+为了避免这个问题，现代web应用程序一般都把全部js引用放在<body>元素中页面内容的后面
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Example HTML Page</title>
+
+ </head>
+<body>
+  <!------这里放内容---->
+     <script type="text/javascript" src="example1.js"></script>
+     <script type="text/javascript" src="example2.js"></script>
+</body>
+</html>
+
+在解析包含的Js代码之前，页面的内容将完全呈现在浏览器中。而用户也会因为浏览器窗口显示空白页面的时间
+缩短而感到代开页面的速度加快了
+
+1.2 延迟脚本（defer属性）
+
+在<script>元素中设置defer属性，相当于告诉浏览器立即下载，但是延迟执行
+    <!DOCTYPE html>
+<html>
+ <head>
+     <title>Example HTML Page</title>
+     <script type="text/javascript" defer='defer'src="example1.js"></script>
+     <script type="text/javascript" defer='defer'src="example2.js"></script>
+ </head>
+<body>
+  <!------这里放内容---->
+</body>
+</html>
+
+延迟脚本并不一定会按照顺序执行，也不一定会在DOMContentLoaded时间出发钱执行，因此最好只包含一个延迟脚本
+defer 属性只适用于外部脚本文件，这一点在HTML5中已经明确规定
+在XHTML中，要把defer属性设置为defer='defer'
+1.3 异步脚本 (async)
+
+HTML5为<script>元素定义了async属性。这个属性与defer属性类似，都用于改变处理脚本的行为。
+ 同样与defer类似，async只适用于外部脚本文件，并告诉浏览器立即下载文件，但与之不同的是，
+    标记为async的脚本并不保证按照指定它们的先后顺序执行
+
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Example HTML Page</title>
+     <script type="text/javascript" async  src="example1.js"></script>
+     <script type="text/javascript"  async src="example2.js"></script>
+ </head>
+<body>
+  <!------这里放内容---->
+</body>
+</html>
+
+确保两者之间互不影响非常重要。指定async属性的目的是不让页面等待两个脚本下载和执行，从而异步加载页面
+其他内容。为此，建议异步脚本不要在加载期间修改DOM
+异步脚本一定会在页面的Load事件前执行，但可能会在DOMContentLoaded事件触发之前或之后执行
+
+在XHTML中，要把async属性设置为async='async'
+
+2.1.4 在XHMLT中的用法
+2.1.5 不推荐使用的语法
+2.2 嵌入代码与外部文件
+1. 可维护性 2. 可缓存  3.适应未来
+
+
+2.3 文档模式
+文档模式是通过使用文档类型（doctype）切换实现。最初的两种文档模式是：混杂模式（quirks mode） 和 标准模式（stadards mode）
+
+2.4 <noscript>元素
+
+    用在不支持js的浏览器中。这个元素可以包含能够出现在文档<body>中的任何HTML元素----<script>元素除外
+        在<noscript>元素中的内容只有在下来情况下才会显示出来：
+        １．浏览器不支持脚本
+        ２．浏览器支持脚本，但脚本被禁用
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Example HTML Page</title>
+     <script type="text/javascript" async  src="example1.js"></script>
+     <script type="text/javascript"  async src="example2.js"></script>
+ </head>
+<body>
+  <noscript>
+      <p>本页面需要浏览器支持（启用）javascript</p>
+  </noscript>
+</body>
+</html>

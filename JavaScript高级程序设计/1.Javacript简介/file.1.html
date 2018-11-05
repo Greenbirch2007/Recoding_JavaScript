@@ -1,0 +1,58 @@
+
+javascript 包括3部分：
+1. 核心（ECMAScript）
+2.文档对象模型（DOM）
+3.浏览器对象模型（BOM）
+
+Web浏览器只是ECMAScript实现可能的宿主环境之一。宿主环境不仅提供基本的ECMAScript实现，同时
+也会提供该语言的扩展，以便语言与环境的对接交互
+
+ECMAScript-262 规定了js有以下组成部分
+1.语法 2.类型 3. 语句 4.关键字  5.保留字
+6. 操作符 7.对象
+
+
+1.2.2 文档对象模型（DOM）
+
+文档对象模型（DOM,Document Object Model）是针对xml但经过扩展用于HTML的应用程序编程接口（API
+,Application Programming Interface）. DOM把整个页面映射为一个多层次节点结构。
+HTML,XML页面中的每个组成部分都是某种类型的节点，这些节点又包含着不同类型的数据
+
+<html>
+    <head>
+        <title>Sample Page</title>
+    </head>
+    <body>
+       <p>Hello World!</p>
+    </body>
+</html>
+
+
+通过DOM创建的这个表示文档的树形图，开发人员获得了控制页面内容和结构的主动权。借助DOM提供的API,
+开发人员可以轻松自如地删除，添加，替换或修改任何节点。
+
+1. 为什么要使用DOM
+
+负责指定web通信标准的w3c（world wide web consortium,万维网联盟）开始着手规划DOM
+
+2.DOM级别
+
+DOM1级别由两个模块组成：DOM核心（DOM Core） 和 DOM HTML.其中，DOM核心规定的是如何映射
+基于XML的文档结构，以便于对文档中任意部分的访问和操作。DOM HTML模块则在DOM核心的基础上加以扩展，
+添加了针对HTML的对象和方法
+
+3. 其他DOM标准
+
+SVG（Scalable Vector Graphic,可伸缩矢量图）1.0
+
+4. Web浏览器对DOM的支持
+
+1.2.3 浏览器对象模型（BOM）
+
+1.4 小结
+
+javascript是一种专门与网页交互设计的脚本语言。由三部分组成
+1.ECMAScript ，由ECMA-262定义，提供核心语言功能
+2.文档对象模型（DOM）,提供访问和操作网页内容的方法和接口
+3.浏览器对象模型（BOM）,提供与浏览器交互的方法和接口
+

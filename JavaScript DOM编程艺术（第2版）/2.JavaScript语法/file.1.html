@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Example</title>
+    <script>
+        JavaSciprt goes here...
+    </script>
+</head>
+<body>
+Mark-up goes here...
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Example</title>
+    <script src="file.js"></script>
+
+</head>
+<body>
+Mark-up goes here...
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Example</title>
+
+</head>
+<body>
+Mark-up goes here...
+<script src="example.js"></script>
+</body>
+// 自我提醒：有注释是好事
+</html>
+<--- 用js编写的代码biubiu通过HTML文档才能被执行：两种实现方法-->
+
+
+1. 将js代码放到文档<head>标签中的<script>标签之间：
+2. 将js代码存放在一个扩展名为.js的独立文件。典型的做法是在文档的<head>部分放一个<script>标签，
+    并把它的src属性指向该文件：
+ 但是最好的做法是把<script>标签放到HTML文档的最后，</body>标签之前：
+    这样能使浏览器更快的加载页面
+    注意，<script>标签没有包含传统的type='text/javascript'属性。因为脚本默认是javaScript，
+    所以没必要指定这个属性。
+
+如果改变了example.js文件的内容，只需在Web浏览器中重新载入test.html文档即可看到效果。Web浏览器
+    会立刻解释并执行你的JavaScript代码
+   程序设计语言分为解释型和编译型两大类。JAVA或C++需要一个编译器（compiler）.编译器是一种程序，
+    能够把java等道济语言编写出来的源代码编译为直接在计算机上执行的文件。
+    解释型程序设计语言不需要编译器。web浏览器负责完成有关的解释和执行工作。浏览器中的javascipt解释
+    器将直接读入源代码并执行。浏览器中如果没有解释器，javascript代码就无法执行，
+
+ 2.2  语法
+ 2.2.1 语句
+
+    用javascript编写的脚本，包含了各种指令，也叫语句（statement）..它们是构成任何一个脚本的基本单位
+    不区分大小写  末尾加上;
+    first statement;
+    second statment;
+
+2.2.2 注释
+
+   不是所有的语句都需要js解释器取解释并执行。 还需要些注释（comment）  注释能有效帮助了解代码流程
+    每行都要加上//
+
+    如果打算注释很多行，你可以在注释内容的开头加上一个斜线和一个星号（/*）,在注释内容的末尾加上一个星号和一个斜线(*/)
+
+    /* 自我提醒：
+        有注释是好事 */
+
+    javaScript解释器对 <!---的处理和 // 是一样的
+    <!--- 这是javascript的注释
+    如果在HTML文档中，还需要以  --->来结束注释
+    <!--- 这是HTML中的注释--->
+    但是js要求每行都以<!---作为开始
+
+2.2.3 变量（variable）
+      把值存入变量的操作称为赋值（assignment）
+      mood = "happy";
+      age = 33;
+   一个变量被赋值以后，就说该变量包含这个值。变量mood现在包含值"happy",变量age包含33
+    js允许程序员直接对变量赋值而无需事先声明。声明（declare）.在js脚本中，如果对某个变量
+    赋值之前为声明，赋值操作将自动声明改变量。
+    var mood;
+    var age;
+    也可以把声明变量和对该变量赋值一次完成
+    var mood="happy";
+    var age = 33;
+    注意， 在js中，变量和其他语法元素的名字都是区分大小写的。
+    var mood= "happy";
+    MOOD = 'sad';
+    js语法不允许变量中包含空格或标点符号（美元符号"$"例外）
+    js变量名允许包含字母，数字，美元符号和下划线（但是第一个字符不允许是数组）
+    var my_mood = "happy";
+    另一种是驼峰格式（camel case）,
+    var myMood = "happy";
+    通常驼峰格式是函数名，方法名和对象属性命名的首选格式
+    "happy"是js语言中的一个字面量（literal）,也就是可以直接在js代码中写出来的数据，
+    文本"happy"除了表示它自己以外不表示任何别的东西
+
+  2.2.4 数据类型
+    变量mood的值是一个字符串，变量age的值则是一个数。有些语言，在声明变量的同时还必须同时
+    声明变量的数据类型，这种做法称为类型声明（typing）
+    必须明确类型声明的语言称为强类型（strongly typed）语言。js不需要进行类型和声明，它是一种
+    弱类型（weakly typed）.这意味着程序员可以在任何阶段改变变量的数据类型
+    js并不在意变量age的值是一个字符串还是一个数
+    以下是js的几种数据类型
+    1.字符串
+    字符串由零个或多个字符构成。字符包括（但不限于）字母，数字，标点符号和空格。
+    字符串必须包在引号里，单引号和双引号通用
+    var mood ='happy';
+    var mood = 'happy';
+    注意，要交叉使用  var mood = "don't ask";
+    或者使用转义符号
+    var mood = 'don\' ask';
+    同理，如果想用双引号包住一个本身就包含双引号的字符串，就必须用反斜线对字符串中的双引号进行转义；
+    var height = "about 5'10\" tall";
+     注意，转义字符不显示
+    2.数值
+    js允许使用带小数点的数值，并且允许任意位小数，浮点数（floating-point number）
+    var age = 32.5;
+    也可以使用负数
+    var temperture = -20;
+    var temperture = -20.99;
+    3. 布尔值
+    true false
+    var sleeping = true;
+    注意 布尔值不是字符串，不能加引号
+    var married = true;
+    4. 数组 （类似python中的列表？）
+    字符串，数值和布尔值都是标量（scalar）.如果某个变量是标量，它在任意时刻就只能有一个值。
+    如果想用一个变量来存储一组值，就需要使用数组（array）
+    数组是指用一个变量表示一个值的集合，集合中的每个值都是和这个数组的一个元素（element）。
+    在js中，数组可以用关键字Array声明。声明数组的同事还可以指定数组初始元素个数，也就是
+    这个数组的长度（length）
+    var beatles = Array(4);
+    也可以不给出个数
+    var beatles = Array();
+    向数组中添加元素的操作称为填充（populting）.在填充数组时，不仅需要给出新元素的值，还要
+    给出新元素在数组中的存放位置，这个位置就是这个元素的下标（index）.
+    数组里一个元素配有一个下标。下标必须用方括号括起来：
+    array[index] = element;
+
+    var beatles = Array(4);
+    beatles[0] = "j"
+    beatles[1] = 'B'
+    beatles[2] = "W"
+    beatles[3] = "X"
+    也可以在声明数组的同时对它进行填充。这种方式用逗号把各个元素隔开即可
+    var beatles =Array('y',"w","a","b");
+    甚至不需要声明在创建数组，只需用一个方括号把各个元素初始值括起来即可
+    var beatles = ['s','a','w','e'];
+    数组元素不必非得是字符串。布尔值，数值，数组都可以
+    var lennon = ["s",666,true];
+    数组元素的值还可以是另一个数组的元素
+    beatles[1] = names[3]
+    数组还可以包含其他的数组，数组中的任何一个元素都可以把一个数组作为它的值
+    var lennon = ['s',666,true];
+    var be = [];
+    beatles[0] = lennon;
+    此时beatles[0][0] 是 "s"  beatles[0][1] 是666 beatles[0][2] 是true
+    有以下方法可以来填充数组。首先看看一种更可读的填充数组的方式，然后介绍存放数组
+    的首选方式：将数据保存为对象
+    关联数组
+     如上beatles数组，每个元素的下标是一个数组，每增加一个元素，这个数字就依次增加1
+    如果在填充数组时只给出了元素的值，这个数组就将是一个传统的数组，它的各个元素的下标将被
+    自动创建和刷新。
+    可以通过在填充数组时为每个新元素明确给出下标来改变这种默认的行为。在为新元素给出
+    下标式，不必局限于使用整数数字，也可以使用字符串：
+    var lennon = Array()
+    lennon['name'] = 's';
+    lennon['age'] =29;
+    lennon['living'] = true;
+    本质上，在创建关联数组时，你创建的是Array对象的属性。在js中，所有的变量实际上都是某种类型的
+    地下。比如，一个布尔值是一个Boolean类型的对象，一个数组就是一个Array类型的对象。
+    理想情况下，你不应该修改Array对象的属性，而应该使用通用的对象（Object）
+
+   2.2.6 对象 （类似pyhon的字典？）
+   与数组类似，对象也是使用一个名字表示一组值。对象的每个值都是对象的一个属性，如
+   var lennon = Object();
+   lennon.name = 's';
+   lennon.age = 29;
+   lennon.living = true;
+
+   与使用Array类似，创建对象使用Object关键字，它不使用方括号和下标来获取元素，而是像任何js对象
+   一样，使用点号来获取属性。
+   创建对象还有一个简洁的语法，即花括号语法：
+   {propertyName:value,propertyName:value}
+   如： var lennon ={name:'s',age:29,living:true};
+   属性名与js变量的命名规则有相同支出，属性值可以是任何js值，包括其他对象
+   用对象来代替传统的数组的做法意味着可以通过元素的名字而不是下标数字来引用它们。提高了效率
+   如 var beatles = Array()
+     beatles[0] lennon; 这时就不需要使用那么多数就可以获得想要的元素。
+     beatles[0].name = 就是可以得到 's'
+     还可以做改进：把beatles数组也声明为对象而不是传统数组。这样一来，我们就可以用"drummer"或
+     "bassist" 等更有意义且容易记忆的字符串值来作为下标来访问数组里的元素
+     var beatles = {};
+     beatles.vocalist = lennon;
+     此时,beatles.vocalist.name的值是"s"    beatles.vocalist.age 的值是 29
+      beatles.vocalist.living 的值是 true
+
+ 2.3 操作（operation）
+
+ 算数操作符（优先级？）
+ 变量可以包含操作
+ var total = (1+4) * 5;
+ var temp_fahrenheit = 95;
+ var temp_celsius = (temp_fahreheit - 32 ) /1.8;
+ js还提供了一些操作符，可简化运算
+ year = year + 1; 相同运算效果可以用 year++;
+ 类似，--操作符将对一个数值变量的值进行减1操作；
+ 加号 ”+“ 是一个比较特殊的操作符，它既可以用于数值，也可以用于字符串。
+ var message = "I am feeling" + "happy";
+ 像这样把多个字符串首尾相连在一起的操作叫做拼接（concatenation）.这种拼接页可以通过变量来完成；
+ var mood = 'happy';
+ var message = "I am feeling" + mood;
+ 甚至可以把数值和字符串拼接在一起，因为js是一种弱类型语言，这种操作是允许的，（有字符串，就字符串优先）
+ var year = 2005;
+ var message = "The year is" + year;
+ 另外，还有快捷操作符 += ，它可以一次完成 ”加法和赋值“（或”拼接和赋值“）的操作
+ var year = 2010;
+ var message = "The year is"；
+ message += year
+ 2.4 条件语句
+
+ 脚本的真正威力体现在它们可以根据人民给出的各种条件做出决策。Js使用条件语句（conditional statement）来做判断
+    在解释脚本时，浏览器将一次执行这个脚本的各条语句
+    if语句的基本语法
+    if (condition) {
+    statement;
+    }
+    条件必须放在if 后面的圆括号中。条件的求值结果永远是一个布尔值，即只能是true或false
+    花括号中的语句——不管有多少条，只有在给定条件的求值结果是true的情况下才能执行
+    if (1>2) {
+    alert("The world has gone mad!")}
+    如果if语句的花括号并非必不可少。如果if语句中的花括号只包含一条语句，可以不用花括号
+    if (1>2) alert("The world has gone mad!")
+    if 语句可以有一个else子句。包含在else子句中的语句会在给定条件为假时执行
+    if (1>2){
+    alert("The world has gone mad!");}
+    else{
+    alert("All is well with the world!");}
+
+
+2.4.1 比较运算符
+
+     > >= < <=
+   注意 = == === 的区别
+    =  赋值用     比较两个值相等 ==
+   不相等 ！=
+    var my_mood = "happy";
+    var your_mood = "sad";
+    if (my_mood==your_mood){
+    alert("We both feel the same.")}
+    如果是比较false与一个空字符串得到的结果
+
+    var a = false;
+    var b = " ";
+    if (a==b){
+    alert("a equals b");}
+     注意 == 认为空字符串与false线共同
+     此时需要使用 ===
+     类似的，一般不相等操作符！=, 如果要严格不相等，就要使用！==
+
+ 2.4.2 逻辑操作符
+ js允许把条件语句里的操作组合在一起， 逻辑比较  &&
+
+ if （num >=5 && num <= 10） {
+ alert("The number is in the right range.");}
+
+  逻辑与：  &&
+  逻辑操作符的操作对象是布尔值，每个逻辑操作数返回一个布尔值true或false。
+  逻辑与操作只有在它的两个操作都是true时才会是true.
+  逻辑或： ||
+  逻辑或只要有一个为true就操作
+  if (num>10|| num<5){
+  alert("The number is not in the right range.")}
+  逻辑非 !()  逻辑非操作符作用于括号里的所有内容 逻辑非操作符把整个条件语句的结果颠倒过来
+
+2.5 循环语句（重复执行代码）
+2.5.1 while循环
+
+while (condition){
+statements}
+
+var count = 1;
+while(count< 11){
+alert(count);
+count++;}
+在while循环的内部必须发生一些会影响循环控制条件的事情
+
+do...while 循环
+do{
+statement;
+} while (condition);
+对循环控制条件的求值发生在每次循环结束之后。因此，即使循环控制条件的首次求值结果是false,
+包含在花括号里的语句也至少会被执行一次（类似测试异常的finanlly）
+
+var count = 1;
+do{
+alert(count);
+count++;
+} while(count<11);
+
+2.5.2 for 循环
+
+ initialize;
+    while (condition){
+    statement;
+    increment;}
+
+   而for 循环不过是进一步改写的更加紧凑而已
+   for (initial condition;test condition;alter condition){
+   statement;}
+
+   用for 循环来重复执行一些diam的好处是循环控制结构更加清晰。与循环有关的所有内容都包含在
+   for 语句的圆括号部分。
+   for (var count = 1; count <11; count++){
+   alert(count)}
+   for 循环的最常见用途一直就是对某个数组里的全体元素进行遍历处理。这往往需要用到数组的array.length属性
+   ，这个属性可以告诉我们在给定数组里的元素的个数。注意，数组的下标是从0开始
+   var beatles = Array('s','e','g','w');
+   for (var count = 0 ; count < beatles.length;count++){
+   alert(beatles[count]);}
+
+2.6 函数
+    如果需要多次使用一段代码，可以把它们封装成一个函数。函数（function）就是一组允许
+    在你的代码里随时调用的语句。每个函数实际上是一个短小的脚本。
+    应该先对函数做定义，然后再调用它们
+    function shout(){
+    var beatles = Array('s','e','g','w');
+   for (var count = 0 ; count < beatles.length;count++){
+   alert(beatles[count]);}}
+    shout();
+    每当需要反复做一件事时，都可以利用函数来避免重复键入大量的相同内容。函数的威力体现在可以把不同的数据传递给它们，
+    而它们将使用这些数据去完成预定的操作。 把传递给函数的数据称为参数（argument）
+    定义一个函数的语法：
+    function name(arguments){
+    statements;}
+    js提供了许多内建函数，如alert()，这个函数就需要我们提供一个参数，它将弹出一个对话框来显示这个参数的值
+    在定义函数时，你可以为它声明任意多个参数，只要用逗号把它们分隔开来就行，在函数的内部，你可以
+    像使用普通变量那样使用它的任何一个参数。
+    function multiply(num1,num2){
+    var total = num1 * num2;
+    alert(total);}
+    函数不仅能够（以参数的形式）接收数据，还能够返回数据
+    我们可以创建一个函数并让它返回一个数值，一个字符串，一个数组或一个布尔值。这是需要用到return语句
+    function multiply(num1,num2){
+    var total = num1 * num2;
+    alert(total);}
+
+    下面这个函数只有一个参数，它将返回一个数值（同一温度的摄氏温度值）
+    function converToCelsius(temp){
+    var result= temp-32;
+    result = result/1.8;
+    return result;}
+    函数的真正价值体现在，我们还可以把它们当做一种数据类型来使用，这意味着可以把一个函数
+    的调用结果赋给一个变量：
+    var temp_farenheit = 95;
+    var temp_celsius = converToCelsius(temp_farenheit);
+    alert(temp_celsius);
+
+    js语言也不允许函数的名字里包含空格。驼峰命名发可以在不违法这个部分的情况下，把变量和函数的
+    名字区分开来
+
+变量的作用域（scope）
+变量即可以是全局的，也可以是局部的。
+全局变量（global variable） 可以在脚本中的任何位置被引用。一旦在某个脚本里声明了一个全局变量，就可以
+从这个脚本的任何位置（包括函数内部）————引用它。全局变量的作用域是整个脚本。
+局部变量（local variable）只存在于声明它的那个函数的内部，在那个函数的外部是无法引用它的。局部
+变量的作用域仅限于某个特定的函数。
+
+可以用var 关键字明确地为函数变量设定作用域。
+如果在某个函数中使用了var,那个变量就将被视为一个局部变量，它只存在于这个函数的上下文中；
+反之，如果没有使用var，那个变量就将被视为一个全局变量，如果脚本里已经存在一个与之同名的全局变量，
+这个函数就会改变那个全局变量的值
+(函数内同名变量优先)
+function square(num) {
+total=num*num;
+return total;}
+var total = 50;
+var number = square(20);
+alert(total);
+
+ 需要改写函数
+    function square(num){
+    var total = num*num;
+    return total;}
+    var total = 50;
+var number = square(20);
+alert(total);
+注意，函数在行为方面应该像一个自给自足的脚本，在定义一个函数时，我们一定要把它内部的变量
+    全都明确地声明为局部变量。如果总是在函数里使用var关键字来定义变量，就能避免这个冲突
+
+2.7 对象
+    对象（Object）是一种重要的数据类型。对象是自包含的数据集合，包含在对象里的数据可以
+    通过两种形式访问---属性（property）和方法（method）:
+    属性是隶属于某个特定对象的变量；
+    方法是只有某个特定对象才能调用的函数。
+    对象就是由一些属性和方法组合在一起而构成的一个数据实体。
+    在js中，属性和方法都是使用“点”语法来访问：
+    Object.property
+    Object.method()
+    Person.mood
+    Person.age
+    Person.walk()
+    Person.sleep()
+    把这些属性和方法全部集合在一起，就可以得到一个Person对象
+    为了使用Person对象来描述一个特定的人，需要创建一个Person对象实例（instance）
+    实例是对象的具体个体。
+    为给定对象创建一个新实例需要使用 new关键字
+    var jeremy = new Person;
+    jeremy.age
+    jeremy.mood  实例访问属性
+    用户定义对象
+      一系列预先定义好的对象，称为内建对象（native object）
+ 2.7.1 内建对象
+ 数组就是一个内建对象。当我们使用new关键字去初始化一个数组时，其实就是在创建一个Array对象的新实例
+ var beatles = new Array();
+ 当需要了解某个数组有多少个元素时，利用Array对象的length属性来获得这一信息：
+ beatles.length;
+ Array对象只是诸多js内建对象中的一种、
+ 如 Math对象的round方法
+ var num = 7.561133113;
+ var num = Math.round(num);
+ alert(num);
+Date对象可以用来存储和检索与特定日期和时间有关的信息。在创建Date对象的新实例时，js解释器
+    将自动地使用当前日期和时间对它进行初始化：
+    var current_date = new Date();
+    Date对象提供了getDay(),getHours()等一系列方法。
+    var today = current_date.getDay();
+
+
+ 2.7.2 宿主对象
+    由浏览器提供的预定义对象被称为宿主对象（host object）
+    宿主对象包括Form，Image,Element,等我们可以通过这些对象获得关于网页上表单，图像和
+    各种表单元素等信息
+    另一种宿主对象也能用来获得网页上的任何一个元素的信息，它就是document对象，后续会介绍其属性和方法
