@@ -99,3 +99,138 @@ parentNode属性，　lasstChild属性，　　　appendChild方法，　　　�
 ２．　使用insertAfter函数
 
 ７．３．３　　图片库二次改进版
+
+
+现在showPic.js文件中包含5个不同的函数，分别为：
+
+1.addLoadEvent  2. insertAfter  3. preparePlaceholder  4.  prepareGallery  5.  showPic
+其中，addLoadEvent和insertAfter属于通用型函数，它们在许多场合都能有用
+
+preparePlaceholder 负责创建一个img元素和一个p元素。这个函数将把这些新创建的元素插入到节点数里图片库清单的后面。
+
+
+prepareGallery 负责处理事件。这个函数将遍历处理图片库清单的每个链接。当用户点击这些链接中的某一个时，就会调用showPic函数
+
+showPic函数负责把"占位符"图片切换为目标图片
+
+为了启用这些功能，用addLoadEvent函数调用preparePlaceholder和prepareGallery  如下
+
+addLoadEvent(preparePlaceholder);
+addLoadEvent(prepareGallery);
+
+javascript代码增加了，但标记相应的减少了。gallery.html文件现在只包含一个由javascript脚本和css样式表共用的"挂钩"。
+这个"挂钩"就是图片清单的id属性
+
+7.4 Ajax 异步加载页面内容的技术。
+
+使用Ajax 就可以做到只更新页面中的一小部分。其他内容——标志，导航，头部，脚部，都不用重新加载。用户仍然像往常一样点击链接。
+但是这一次，已经加载的页面中只有一小部分区域会更新，而不必再次加载整个页面
+
+Ajax的主要优势就是对页面的请求以异步方式发送到服务器。而服务器不会用整个页面来响应请求。它会在后台处理请求，与此同时
+用户还能继续浏览页面并与页面交互。你的脚本则可以按需加载和创建页面内容，而不会打断用户的浏览体验
+
+7.4.1 XMLHttpRequest对象
+
+Ajax技术的核心就是XMLHttpRequest对象。这个对象充当这浏览器中的脚本(客户端)与服务器之间的中间人的角色。以往的请求都由浏览器发出，而
+javascript通过这个对象可以自己发送请求，同时也自己处理相应
+
+为了模拟服务器的响应，在ajax.html文件的旁边创建一个example.txt文件，里面内容：this was loaded asynchronously!
+
+这个文件将充当服务器端脚本的输出。多数情况下，服务器端脚本在接到请求后会做一番处理再输出结果
+
+getHTTPObject通过对象检测技术检测了XMLHttpRequest.如果失败，则继续检测其他方法，最终返回false或一个新的XMLHttpRequest(或XMLHTTP)对象
+
+
+XMLHttpReuqest对象有多种方法呢，其中常用的是open方法，它用来指定服务器上将要访问的文件，指定请求类型：GET,POST,SEND
+这个方法的第三个参数用于指定请求是否以异步方式发送和处理
+
+当页面加载完成后，以上代码会发起一个GET请求，请求与ajax.html文件位于同一目录的example.txt文件
+
+代码中的onreadystatechange是一个事件处理函数，他回在服务器给XMLHttpRequest对象送回响应的时候被触发执行。
+在这里处理函数中，可以根据服务器的具体响应做相应的处理
+
+我们给它指定了一个处理函数：
+
+request.onreadystatechange = function(){
+//处理响应
+};
+也可以引用一个函数。注意，在为onreadystatechange指定函数引用时，不要在函数名后面加括号。因为加括号表示立即调用函数，
+而我们在此只想把函数自身的引用（而不是函数结果）赋值给onreadystate-change属性
+
+request.onreadystatechange = doSomething;
+
+在指定了请求的目标，也明确了如何处理响应之后，就可以用send方法发送请求了
+request.send(null);
+
+服务器在向XMLHttpRequest对象发回响应时，该对象有许多属性可用，李兰器不同节点更新readyState属性的值：
+0 表示未初始化
+1 表示正在加载
+2 表示加载完毕
+3 表示正在交互
+4 表示完成
+
+只要readyState属性的值变成了4，就可以访问服务器发送过来的数据了
+
+访问服务器发送回来的数据要通过两个属性完成
+1.responseText,这个属性用于保存文本字符串形式的数据
+2.resonseXML,用于保存Content-Type头部中指定为"text/xml"的数据，其实十一个DocumentFragment对象。你可以使用各种DOM方法来处理这个对象
+
+例子中，onreadystatechange事件处理函数在等到readyState值变成4之后，就会从responseText属性里取得文本数据，然后把数据放到一个段落
+，再将新段落添加到DOM里
+
+此时，example.txt文件的文本内容就会出现在id为new的div元素中
+
+注意，在使用ajax时，千万要注意同源测量。使用XMLHttpRequest对象发送的请求只能访问与其所在的HTML处于同一个域中的数据，不能向其他
+域发送请求。此外，有些浏览器还会限制ajax请求使用的协议。
+
+异步请求有一个容易被忽略的问题是异步性，就是脚本在发送XMLHttpRequest请求之后，仍然会继续执行，不会等待响应返回。
+在request.onreadystatechange处理函数和getNewContent函数的最后个添加一条警告框
+
+现在加载一下页面试试，，很可能显示"Function Done"的警告框会先于 “Response Received”的警告框出现。这就证明了脚本不会等待
+send的响应，而是会继续执行。之所以说“很可能”，是因为有时候服务器的响应是非常快。如果你是从本地硬盘上加载文件，请求和响应几乎会同时发送。
+而如果从手机浏览器中加载页面，那么在收到响应之前就恐怕要等待很长时间。
+
+为此，如果其他脚本依赖于服务器的响应，那么就得把相应的代码都转移到指定给onreadystatechange属性的那个函数中
+
+ajax的挑战
+
+
+利用它，可以增强站点的可用性，用户无须刷新页面，从而可以很快地得到响应。要构建成功的ajax应用，关键在于将ajax功能看做一般的javascript
+增强功能，在平稳退化的基础上求得渐进增强
+
+7.4.2 渐进增强与ajax
+
+很多站点使用了ajax技术并明确要求必须启用javascript才能正常访问网站的内容
+
+ajax拦住发送到服务器的请求，并将请求转交给XMLHttpRequest对象处理。这种情况下，ajax功能就扮演了一个位于常规站点之上的层
+
+从一开始就依赖ajax构建核心应用，无异于从一开始就使用javascript:伪协议去处理点击链接的操作。对于后者，更好的方式当然是只使用
+常规的链接，然后通过javascript去拦截默认动作。同样的道理，构建ajax网站的最好方法，也是先构建一个常规的网站，然后Hijax它
+
+
+7.4.3 Hijax
+
+ajax应用主要依赖后台服务器，实际上是服务器端的脚本语言完成了绝大部分工作。XMLHttpRequest对象作为浏览器和服务器之间“中间人”，
+它只是负责传递请求和响应。如果把这个中间人请开，浏览器与服务器之间的请求和响应应该继续完成(而不是中断)，只不过花的时间会长一些
+
+为了给这个登录表单添加ajax功能，就需要拦截提交表单的请求(Hijax)，让XMLHttpRequest请求来代为发送。提交表单触发的是submit事件，
+因此只要通过onsubmit事件处理函数捕获该事件，就可以取消它的默认操作(提交整个页面)，然后代之以一个新的操作：
+通过XMLHttpRequest对象向服务器发送数据
+
+ajax应用主要依赖于服务器端，处理，而非客户端处理
+
+向浏览器里的文档动态添加标记的方法：1.document.write  2. innerHTML
+利用DOM方法来动态创建标记的例子:1. createElement    2.createTextNode  3. appendChild  4. insertBefore
+
+
+8.7 检索和添加信息
+
+在需要对文档的现有信息进行检索时，以下的DOM方法最有用:
+1.getElementId 2. getElementByTagName  3. getAttribute
+
+在需要把信息添加到文档里去时，以下的DOM最有用
+
+1. createElement 2. createTextNode  3. appendChild  4. insertBefore 5.  setAttribute
+
+
+使用记住，javascript脚本只应该用来充实文档的内容，要避免使用DOM技术来创建核心内容
