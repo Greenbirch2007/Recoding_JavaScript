@@ -2,51 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25b83be2-9238-4d77-8427-c7c088e4b8f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/7.动态创建标记/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../explanation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scripts/displayAccesskeys.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scripts/displayCitations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scripts/highlightRows.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scripts/stripeTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scripts/styleHeaderSiblings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../styles/format.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../styles/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../t_11_8.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.动态创建标记/file.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/7.动态创建标记/file.1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.动态创建标记/file.2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.动态创建标记/file.3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.动态创建标记/file.4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.动态创建标记/file.5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/8.充实文档的内容/file.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/8.充实文档的内容/file.1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/9.CSS-DOM/file.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/9.CSS-DOM/file.1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/images/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/images/10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/images/2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/images/3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/images/4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/images/5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/images/6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/images/7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/images/8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/images/9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/loan_example.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/scripts/debug.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/scripts/hide.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/scripts/prepareLink.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/scripts/showPic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/scripts/t_10_25.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/scripts/t_10_29.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/scripts/t_10_29_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/styles/layout.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/styles/warning.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/t_10_13_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/t_10_15.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/t_10_16.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/t_10_17.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/t_10_22.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/t_10_23.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/t_10_25.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/t_10_29.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/t_10_29_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/t_11_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/t_11_1_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TESTS/test1.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +27,10 @@
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.34" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.65" value="1" />
+          <entry key="project.open.time.73" value="1" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -82,13 +49,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="16850" />
+          <entry key="html" value="19946" />
           <entry key="js" value="161" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="16850" />
+          <entry key="HTML" value="19946" />
           <entry key="JavaScript" value="161" />
         </counts>
       </usages-collector>
@@ -99,7 +66,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/7.动态创建标记/file.1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
+            <state relative-caret-position="3995">
               <caret line="235" column="47" selection-start-line="235" selection-start-column="47" selection-end-line="235" selection-end-column="47" />
             </state>
           </provider>
@@ -108,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/8.充实文档的内容/file.1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
+            <state relative-caret-position="1632">
               <caret line="96" column="14" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
             </state>
           </provider>
@@ -117,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/9.CSS-DOM/file.1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="4" selection-start-column="4" selection-end-column="4" />
+            <state relative-caret-position="501">
+              <caret line="133" column="30" selection-start-line="133" selection-start-column="30" selection-end-line="133" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -142,10 +109,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="153" />
-    <option name="y" value="286" />
-    <option name="width" value="1127" />
-    <option name="height" value="550" />
+    <option name="x" value="186" />
+    <option name="y" value="224" />
+    <option name="width" value="1137" />
+    <option name="height" value="544" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -193,7 +160,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -308,22 +275,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/7.动态创建标记/file.1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
+        <state relative-caret-position="3995">
           <caret line="235" column="47" selection-start-line="235" selection-start-column="47" selection-end-line="235" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/8.充实文档的内容/file.1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
+        <state relative-caret-position="1632">
           <caret line="96" column="14" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/9.CSS-DOM/file.1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" selection-start-column="4" selection-end-column="4" />
+        <state relative-caret-position="501">
+          <caret line="133" column="30" selection-start-line="133" selection-start-column="30" selection-end-line="133" selection-end-column="30" />
         </state>
       </provider>
     </entry>
