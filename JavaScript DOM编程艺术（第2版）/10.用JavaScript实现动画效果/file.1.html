@@ -1,1 +1,68 @@
 第10章 用javascript实现动画效果
+
+本章内容：
+动画基础知识
+用动画丰富网页的浏览效果(让网页上的元素动起来)
+
+
+10.1  动画基础知识
+
+动画就是让元素的位置随着事件而不断地发生变化
+
+10.1.1  位置
+
+网页元素在浏览器窗口里的位置是一种表示性的信息。位置信息通常是由css负责设置的。
+element {}
+
+postion属性的合法值有static,fixed,relative,absolute
+
+static是position属性的默认值，意思是有关元素将按照它们在标记里出现的先后顺序出现出现在浏览器里面
+
+改变某个元素的位置也很简单，只要执行一个函数去改变这个元素的style.top或style.left等属性即可
+
+
+如果让moveMesage函数在页面加载时运行，这个元素的位置将立刻方式变化————由positionMessage函数给出
+的原始位置会被立刻覆盖
+
+元素的显示位置立刻发生变化并不是我们想要的动画效果。要获得真正的动画效果，必须让元素的位置随着时间不断地发生变化
+
+10.1.2  时间
+javascript函数setTimeout能够让某个函数在经过一段预定的时间之后才开始执行。这个函数带有两个参数：第一个参数通常是一个字符串，其内容
+是将要执行的那个函数的名字；第二个函数是一个数值，它以毫秒为单位设定了需要经过多长时间才开始执行第一个参数所给的函数
+
+variable= setTimeout("function",interval)
+
+如果想取消某个正在排队等待执行的函数，就必须事先像上面这样把setTimeout函数的返回值给一个变量。你可以用一个名为clearTimeout来取消
+“等待执行”队列里的某个函数，这个函数需要一个函数————保存着某个setTimeou函数调用返回值的变量
+
+clearTimeout(varable);
+
+修改positionMessage函数，让它在5秒（5000毫秒）之后才去调用moveMessage函数
+
+这样一来，那条消息将先出现在它的原始位置上，然后在5秒之后才向右“跳跃”150像素。
+可以用clearTimeout(movement)来取消这个“跳跃”行为
+
+movement 变量对应着positionMessage函数里定义的setTimeout调用。它是一个全局变量，我在声明它时未使用关键字var.
+这意味着那个“跳跃”行为可以在positionMessage以外的地方别取消
+
+10.1.3 时间递增量
+
+把某个元素在5秒钟后一定很难说是动画。真正的的动画效果是一个渐变的过程，元素应该从出发点逐步地移动到目的地，而不是从出发点一下子跳跃
+到目的地。javascript函数parseInt可以把字符串里的数值信息提取出来。如果把一个以数字开头的字符串传递给这个函数，它将返回一个数值
+
+parseInt(string);
+
+返回浮点数  parseFloat(string)
+主要 只有使用了DOM脚本或style属性为元素分配了位置后，这里的parseInt函数才能起作用
+
+
+10.1.4 抽象
+
+通过对moveMessage函数进行抽象，你可以让它变得更加通用(便于重用)
+
+1.创建moveElement函数
+
+function moveElement(elementID,final_x,final_y,interval)
+
+
+10.2 实用的动画

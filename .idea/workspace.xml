@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7ddb01c-aa32-431e-8f4d-53a11611384e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/highlightRows.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/stripeTables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/styleHeaderSiblings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/format.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/t_11_8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/moveElement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/moveMessage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/positionMessage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/t_11_10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/t_11_10_2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/9.CSS-DOM/file.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/9.CSS-DOM/file.1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/10.用JavaScript实现动画效果/file.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/10.用JavaScript实现动画效果/file.1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/addLoadEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/addLoadEvent.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,80 +21,110 @@
     <session id="2146605956">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="13" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.24" value="2" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.41" value="1" />
+          <entry key="project.open.time.41" value="2" />
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.88" value="1" />
           <entry key="project.open.time.92" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="3" />
-          <entry key="html" value="26" />
-          <entry key="js" value="20" />
+          <entry key="html" value="34" />
+          <entry key="js" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="3" />
-          <entry key="HTML" value="26" />
-          <entry key="JavaScript" value="20" />
+          <entry key="HTML" value="34" />
+          <entry key="JavaScript" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="382" />
-          <entry key="html" value="10348" />
-          <entry key="js" value="3136" />
+          <entry key="html" value="11109" />
+          <entry key="js" value="3471" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="382" />
-          <entry key="HTML" value="10348" />
-          <entry key="JavaScript" value="3136" />
+          <entry key="HTML" value="11109" />
+          <entry key="JavaScript" value="3471" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/10.用JavaScript实现动画效果/file.1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/t_11_10_2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter10/slideshow2/list.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/moveMessage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/t_11_8.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="29" column="64" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
+            <state relative-caret-position="493">
+              <caret line="29" column="64" selection-end-line="58" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/9.CSS-DOM/file.1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="128" column="8" lean-forward="true" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
-            </state>
-          </provider>
+        <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter10/slideshow/list.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/highlightRows.js">
+        <entry file="file://$PROJECT_DIR$/scripts/addLoadEvent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="68">
+              <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -105,9 +134,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -126,7 +155,6 @@
         <option value="$PROJECT_DIR$/scripts/getHTTPOjbect.js" />
         <option value="$PROJECT_DIR$/scripts/getNewContent.js" />
         <option value="$PROJECT_DIR$/styles/typography.css" />
-        <option value="$PROJECT_DIR$/scripts/addLoadEvent.js" />
         <option value="$PROJECT_DIR$/scripts/displayAbbreviation.js" />
         <option value="$PROJECT_DIR$/scripts/displayCitations.js" />
         <option value="$PROJECT_DIR$/scripts/displayAccesskeys.js" />
@@ -138,6 +166,12 @@
         <option value="$PROJECT_DIR$/scripts/stripeTables.js" />
         <option value="$PROJECT_DIR$/t_11_8.html" />
         <option value="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/9.CSS-DOM/file.1.html" />
+        <option value="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/10.用JavaScript实现动画效果/file.1.html" />
+        <option value="$PROJECT_DIR$/scripts/addLoadEvent.js" />
+        <option value="$PROJECT_DIR$/scripts/moveMessage.js" />
+        <option value="$PROJECT_DIR$/scripts/positionMessage.js" />
+        <option value="$PROJECT_DIR$/t_11_10.html" />
+        <option value="$PROJECT_DIR$/t_11_10_2.html" />
       </list>
     </option>
   </component>
@@ -147,7 +181,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="189" />
     <option name="y" value="59" />
     <option name="width" value="1127" />
@@ -186,6 +220,12 @@
             <path>
               <item name="Recoding_JavaScript" type="b2602c69:ProjectViewProjectNode" />
               <item name="Recoding_JavaScript" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaScript DOM编程艺术（第2版）" type="462c0819:PsiDirectoryNode" />
+              <item name="10.用JavaScript实现动画效果" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Recoding_JavaScript" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Recoding_JavaScript" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -203,7 +243,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/源码 整理" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -241,16 +281,19 @@
       <workItem from="1541655936165" duration="1650000" />
       <workItem from="1541658065459" duration="1434000" />
       <workItem from="1541660074699" duration="190000" />
+      <workItem from="1541844879996" duration="1599000" />
+      <workItem from="1541846817034" duration="864000" />
+      <workItem from="1541848962668" duration="428000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17660000" />
+    <option name="totallyTimeSpent" value="20559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="718" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24869695" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20104244" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -444,13 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/t_11_8.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="29" column="64" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/getHTTPOjbect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -465,20 +501,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/addLoadEvent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gallery.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/9.CSS-DOM/file.1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="128" column="8" lean-forward="true" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
+        <state relative-caret-position="433">
+          <caret line="150" column="7" selection-start-line="150" selection-end-line="150" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/10.用JavaScript实现动画效果/file.2.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/highlightRows.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/addLoadEvent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/moveElement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/positionMessage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter10/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-468">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter10/slideshow/list.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/t_11_8.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="64" selection-end-line="58" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/t_11_10.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/10.用JavaScript实现动画效果/file.1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/t_11_10_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/moveMessage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
