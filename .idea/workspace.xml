@@ -2,27 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7ddb01c-aa32-431e-8f4d-53a11611384e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/logo.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/prepareSlideshow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/basic.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/color.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/global.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/10.用JavaScript实现动画效果/file.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/10.用JavaScript实现动画效果/file.1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/11.HTML5/file.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/11.HTML5/file.1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/12.综合示例/file.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/12.综合示例/file.1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bigben.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/coffee.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/fireworks.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/placeholder.gif" beforeDir="false" afterPath="$PROJECT_DIR$/images/placeholder.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rose.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/thumbnail_bigben.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/thumbnail_coffee.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/thumbnail_fireworks.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/thumbnail_rose.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/color.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/color.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/typography.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/typography.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/template.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +24,7 @@
     <session id="2146605956">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
@@ -45,46 +35,48 @@
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.37" value="2" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.41" value="2" />
-          <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.44" value="2" />
           <entry key="project.open.time.49" value="1" />
+          <entry key="project.open.time.69" value="1" />
           <entry key="project.open.time.88" value="1" />
           <entry key="project.open.time.92" value="1" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="9" />
+          <entry key="css" value="11" />
           <entry key="gif" value="2" />
-          <entry key="html" value="40" />
-          <entry key="js" value="28" />
+          <entry key="html" value="47" />
+          <entry key="js" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="9" />
-          <entry key="HTML" value="40" />
+          <entry key="CSS" value="11" />
+          <entry key="HTML" value="47" />
           <entry key="Image" value="2" />
-          <entry key="JavaScript" value="28" />
+          <entry key="JavaScript" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="1933" />
-          <entry key="html" value="12714" />
-          <entry key="js" value="3558" />
+          <entry key="css" value="2082" />
+          <entry key="html" value="13155" />
+          <entry key="js" value="4364" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1933" />
-          <entry key="HTML" value="12714" />
-          <entry key="JavaScript" value="3558" />
+          <entry key="CSS" value="2082" />
+          <entry key="HTML" value="13155" />
+          <entry key="JavaScript" value="4364" />
         </counts>
       </usages-collector>
     </session>
@@ -94,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/12.综合示例/file.1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="60" column="70" selection-start-line="60" selection-start-column="70" selection-end-line="60" selection-end-column="70" />
+            <state relative-caret-position="501">
+              <caret line="114" column="39" lean-forward="true" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -111,19 +103,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/styles/format.css">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8">
-              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+            <state relative-caret-position="187">
+              <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -131,8 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter12/domsters/template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="36" selection-end-column="44" />
+            <state relative-caret-position="178">
+              <caret line="22" column="30" lean-forward="true" selection-end-line="40" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -140,7 +123,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter10/slideshow/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
+            <state relative-caret-position="170">
               <caret line="10" column="43" selection-end-line="34" />
             </state>
           </provider>
@@ -151,9 +134,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -193,11 +176,17 @@
         <option value="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/10.用JavaScript实现动画效果/file.1.html" />
         <option value="$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter12/domsters/template.html" />
         <option value="$PROJECT_DIR$/styles/basic.css" />
+        <option value="$PROJECT_DIR$/styles/typography.css" />
+        <option value="$PROJECT_DIR$/about.html" />
+        <option value="$PROJECT_DIR$/photos.html" />
+        <option value="$PROJECT_DIR$/live.html" />
+        <option value="$PROJECT_DIR$/contact.html" />
         <option value="$PROJECT_DIR$/template.html" />
-        <option value="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/12.综合示例/file.1.html" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/styles/color.css" />
         <option value="$PROJECT_DIR$/styles/layout.css" />
-        <option value="$PROJECT_DIR$/styles/typography.css" />
+        <option value="$PROJECT_DIR$/scripts/global.js" />
+        <option value="$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/12.综合示例/file.1.html" />
       </list>
     </option>
   </component>
@@ -208,10 +197,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="189" />
-    <option name="y" value="34" />
-    <option name="width" value="1117" />
-    <option name="height" value="581" />
+    <option name="width" value="1107" />
+    <option name="height" value="587" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -287,7 +274,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter12/domsters/template.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -337,11 +324,14 @@
       <workItem from="1542095546522" duration="1765000" />
       <workItem from="1542097399215" duration="1739000" />
       <workItem from="1542099196260" duration="517000" />
+      <workItem from="1542271631280" duration="1857000" />
+      <workItem from="1542273761387" duration="1047000" />
+      <workItem from="1542275577553" duration="422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27437000" />
+    <option name="totallyTimeSpent" value="31414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="718" extended-state="6" />
@@ -375,43 +365,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TESTS/scripts/showPic.js" />
-    <entry file="file://$PROJECT_DIR$/ajax.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/showPic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/getNewContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter08/abbreviations/scripts/addLoadEvent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/displayAbbreviation.js" />
-    <entry file="file://$PROJECT_DIR$/scripts/displayCitations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter08/abbreviations/scripts/displayAbbreviations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -491,13 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/format.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/getHTTPOjbect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -573,13 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter10/slideshow/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="10" column="43" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/moveElement.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -615,20 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter12/domsters/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="36" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/12.综合示例/file.1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="60" column="70" selection-start-line="60" selection-start-column="70" selection-end-line="60" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/logo.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -640,25 +565,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template.html">
+    <entry file="file://$PROJECT_DIR$/styles/typography.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/format.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="578">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter10/slideshow/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="43" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter12/domsters/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="22" column="30" lean-forward="true" selection-end-line="40" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript DOM编程艺术（第2版）/12.综合示例/file.1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="114" column="39" lean-forward="true" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/live.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/styles/color.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="1" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
+        <state relative-caret-position="1462">
+          <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="11" selection-start-line="23" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/源码 整理/javascript DOM编程艺术(第2版)源码/chapter12/domsters/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/styles/layout.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/typography.css">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/scripts/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="139" column="31" selection-start-line="139" selection-start-column="31" selection-end-line="139" selection-end-column="31" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
